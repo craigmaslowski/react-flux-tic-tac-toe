@@ -23,7 +23,7 @@ var TicTacToe = React.createClass({
   
   render: function () {
     var status;
-console.log(JSON.stringify(this.state));    
+
     if (this.state.turn === 10 && !this.state.winner) {
       status = 'It\s a tie!';
     } else {
