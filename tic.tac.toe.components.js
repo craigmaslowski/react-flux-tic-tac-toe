@@ -23,8 +23,8 @@ var TicTacToe = React.createClass({
   
   render: function () {
     var status;
-    
-    if (this.state.turn > 10 && !this.winner) {
+console.log(JSON.stringify(this.state));    
+    if (this.state.turn === 10 && !this.state.winner) {
       status = 'It\s a tie!';
     } else {
       status = this.state.winner
@@ -42,7 +42,7 @@ var TicTacToe = React.createClass({
           onClick: this.handleClick 
         }),
         rce('div', { className: 'status' }, status),
-        this.state.winner
+        (this.state.winner || this.state.turn === 10)
           ? rce('a', { href: '#', onClick: this.startNewGame }, 'Start New Game')
           : undefined
       )
